@@ -1,11 +1,13 @@
 import unittest, json, pathlib, sys
 from main import redact
 
+
 with pathlib.Path.open("test/input.json", "r") as file:
     input_file = json.load(file)
-
 class test_mask_log(unittest.TestCase):
     def test_NestedObjectsShouldNotGetChange(self):
+        with pathlib.Path.open("test/input.json", "r") as file:
+            input_file = json.load(file)
         res = redact("test/input.json")
 
         redact_file = res[0]

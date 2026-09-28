@@ -1,0 +1,13 @@
+{
+    "event": "login",
+    "email": "anna@example.test",
+    "token": "demo123",
+    "meta": {
+        "EMAIL": "bob@example.test",
+        "attempt": 2
+    },
+    "items": [
+        {"token": "demo456"}
+    ],
+    "message": "user entered"
+}

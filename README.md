@@ -44,5 +44,5 @@ py main.py
 ```
 ## Запуск тестов
 ```powershell
-py test_redact.py
+py -m unittest discover
 ```

@@ -2,11 +2,10 @@ import unittest, json, pathlib, sys
 from main import redact
 
 
-
+with pathlib.Path("test/input.json").open("r") as file:
+    input_file = json.load(file)
 class test_mask_log(unittest.TestCase):
     def test_NestedObjectsShouldNotGetChange(self):
-        with pathlib.Path.open("test/input.json", "r") as file:
-            input_file = json.load(file)
         res = redact("test/input.json")
 
         redact_file = res[0]
@@ -41,7 +40,7 @@ class test_mask_log(unittest.TestCase):
         res = redact("test/input.json")
         
         try: 
-            with pathlib.Path.open("test/output.json") as file: pass
+            with pathlib.Path("test/output.json").open("r") as file: pass
         except:
             factual_res = False
         expected_res = False

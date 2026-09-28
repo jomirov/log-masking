@@ -4,7 +4,7 @@ def check_key(key):
     return key.lower() == "email" or key.lower() == "token"
 
 def redact(filepath):
-    with pathlib.Path.open(filepath, "r", encoding="UTF-8") as file:
+    with pathlib.Path(filepath).open("r", encoding="UTF-8") as file:
         f = json.load(file)
 
     update_count = 0
@@ -45,5 +45,5 @@ if __name__ == "__main__":
             else:
                 break
         if choice == "Y":
-            with pathlib.Path.open("output.json", "w") as file:
+            with pathlib.Path("output.json").open("w") as file:
                 file.write(json.dumps(res[0], indent=4))
